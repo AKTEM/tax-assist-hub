@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import testimonialsBg from "@/assets/testimonials-bg.jpg";
 
 const AnimatedCard = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
@@ -48,13 +49,16 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="py-20 md:py-28">
-      <div className="container mx-auto px-4">
+    <section id="testimonials" className="py-20 md:py-28 relative">
+      <div className="absolute inset-0">
+        <img src={testimonialsBg} alt="" className="w-full h-full object-cover opacity-[0.05]" />
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         <AnimatedCard>
           <div className="text-center mb-16">
             <span className="text-secondary font-semibold uppercase tracking-widest text-sm">Client Stories</span>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mt-3 mb-6">
-              What Our <span className="gradient-text">Clients Say</span>
+              What Our <span className="text-secondary">Clients Say</span>
             </h2>
           </div>
         </AnimatedCard>

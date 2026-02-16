@@ -27,7 +27,7 @@ const Header = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-header-foreground font-medium text-sm uppercase tracking-wider hover:text-primary transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+              className="text-nav-text font-medium text-sm uppercase tracking-wider hover:text-primary transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
             >
               {link.label}
             </a>
@@ -64,7 +64,7 @@ const Header = () => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-header-foreground font-medium text-sm uppercase tracking-wider hover:text-primary transition-colors"
+                  className="text-nav-text font-medium text-sm uppercase tracking-wider hover:text-primary transition-colors"
                 >
                   {link.label}
                 </a>

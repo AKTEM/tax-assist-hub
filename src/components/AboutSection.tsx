@@ -17,6 +17,7 @@ import {
   PieChart,
   ArrowUpRight,
 } from "lucide-react";
+import aboutPerson from "@/assets/about-person.png";
 
 const AnimatedCard = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
@@ -53,47 +54,60 @@ const approachItems = [
   "We drive continuous improvement in everything we do",
 ];
 
+const stats = [
+  { value: "100+", label: "Clients Served", icon: Users },
+  { value: "15+", label: "Years Experience", icon: BarChart3 },
+  { value: "98%", label: "Client Satisfaction", icon: PieChart },
+  { value: "50+", label: "Professionals", icon: Award },
+];
+
 const AboutSection = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-20 md:py-28" ref={sectionRef}>
+    <section id="about" className="py-20 md:py-28 relative" ref={sectionRef}>
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <AnimatedCard>
-          <div className="text-center mb-16">
-            <span className="text-primary font-semibold uppercase tracking-widest text-sm">Who We Are</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mt-3 mb-6">
-              About <span className="gradient-text">Tax Assist Solutions</span>
-            </h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
-              Tax Assist Solutions is a firm of young and dynamic Chartered Accountants focused on providing Accounting, Financial and advisory services to companies in various sectors of the economy. We leverage on our smart approach to delivering quality services as our clients appreciate our professional competence and ability to understand and satisfy the needs of all stakeholders.
-            </p>
-          </div>
-        </AnimatedCard>
+        {/* Hero About: Text + Stats LEFT, Image RIGHT */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+          {/* Left side */}
+          <AnimatedCard>
+            <div>
+              <span className="text-primary font-semibold uppercase tracking-widest text-sm">Who We Are</span>
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mt-3 mb-6">
+                About <span className="text-primary">Tax Assist Solutions</span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                Tax Assist Solutions is a firm of young and dynamic Chartered Accountants focused on providing Accounting, Financial and advisory services to companies in various sectors of the economy. We leverage on our smart approach to delivering quality services as our clients appreciate our professional competence and ability to understand and satisfy the needs of all stakeholders.
+              </p>
 
-        {/* Stats Bar */}
-        <AnimatedCard delay={0.1}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
-            {[
-              { value: "100+", label: "Clients Served", icon: Users },
-              { value: "15+", label: "Years Experience", icon: BarChart3 },
-              { value: "98%", label: "Client Satisfaction", icon: PieChart },
-              { value: "50+", label: "Professionals", icon: Award },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                className="glass-card p-6 text-center group hover:border-primary/50 transition-all duration-500"
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
-                <stat.icon className="w-8 h-8 text-primary mx-auto mb-3 group-hover:text-secondary transition-colors" />
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">{stat.value}</div>
-                <div className="text-muted-foreground text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </AnimatedCard>
+              {/* 2x2 Stats Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {stats.map((stat) => (
+                  <motion.div
+                    key={stat.label}
+                    className="glass-card p-5 text-center group hover:border-secondary/50 transition-all duration-500"
+                    whileHover={{ y: -5, scale: 1.02 }}
+                  >
+                    <stat.icon className="w-7 h-7 text-secondary mx-auto mb-2 group-hover:text-primary transition-colors" />
+                    <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
+                    <div className="text-muted-foreground text-sm">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </AnimatedCard>
+
+          {/* Right side - Image */}
+          <AnimatedCard delay={0.2}>
+            <div className="flex justify-center lg:justify-end">
+              <img
+                src={aboutPerson}
+                alt="Tax professional with charts"
+                className="max-h-[550px] w-auto object-contain drop-shadow-2xl"
+              />
+            </div>
+          </AnimatedCard>
+        </div>
 
         {/* Mission & Vision */}
         <div className="grid md:grid-cols-2 gap-8 mb-20">
@@ -139,10 +153,10 @@ const AboutSection = () => {
         {/* Philosophy */}
         <AnimatedCard delay={0.25}>
           <div className="glass-card p-8 md:p-12 mb-20 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 gradient-bg" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-primary" />
             <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 rounded-lg gradient-bg">
-                <Lightbulb className="w-7 h-7 text-primary-foreground" />
+              <div className="p-3 rounded-lg bg-primary/15">
+                <Lightbulb className="w-7 h-7 text-primary" />
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-foreground">Our Philosophy</h3>
             </div>
@@ -170,11 +184,11 @@ const AboutSection = () => {
           {coreValues.map((val, i) => (
             <AnimatedCard key={val.title} delay={0.1 + i * 0.08}>
               <motion.div
-                className="glass-card p-6 group hover:border-primary/40 transition-all duration-500 h-full"
+                className="glass-card p-6 group hover:border-secondary/40 transition-all duration-500 h-full"
                 whileHover={{ y: -8, scale: 1.02 }}
               >
-                <div className="p-3 rounded-lg bg-primary/10 inline-block mb-4 group-hover:bg-primary/20 transition-colors">
-                  <val.icon className="w-6 h-6 text-primary" />
+                <div className="p-3 rounded-lg bg-secondary/10 inline-block mb-4 group-hover:bg-secondary/20 transition-colors">
+                  <val.icon className="w-6 h-6 text-secondary" />
                 </div>
                 <h4 className="text-xl font-bold text-foreground mb-2">{val.title}</h4>
                 <p className="text-muted-foreground leading-relaxed">{val.desc}</p>
@@ -212,7 +226,7 @@ const AboutSection = () => {
 
         <AnimatedCard delay={0.5}>
           <div className="text-center mt-8">
-            <p className="text-2xl font-bold gradient-text">Quality is REST Assured.</p>
+            <p className="text-2xl font-bold text-primary">Quality is REST Assured.</p>
           </div>
         </AnimatedCard>
       </div>
