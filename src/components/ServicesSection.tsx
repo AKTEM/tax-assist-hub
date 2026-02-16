@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import servicesBg from "@/assets/services-bg.jpg";
 import {
   Calculator,
   FileText,
@@ -68,13 +69,16 @@ const services = [
 const ServicesSection = () => {
   return (
     <section id="services" className="py-20 md:py-28 relative">
-      <div className="absolute inset-0 bg-card/50" />
+      <div className="absolute inset-0">
+        <img src={servicesBg} alt="" className="w-full h-full object-cover opacity-[0.07]" />
+      </div>
+      <div className="absolute inset-0 bg-card/80" />
       <div className="container mx-auto px-4 relative z-10">
         <AnimatedCard>
           <div className="text-center mb-16">
             <span className="text-primary font-semibold uppercase tracking-widest text-sm">What We Offer</span>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mt-3 mb-6">
-              Our <span className="gradient-text">Services</span>
+              Our <span className="text-primary">Services</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               We are passionate and dedicated to providing comprehensive financial services tailored to your business needs.

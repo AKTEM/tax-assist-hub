@@ -41,7 +41,7 @@ const ContactSection = () => {
           <div className="text-center mb-16">
             <span className="text-primary font-semibold uppercase tracking-widest text-sm">Get In Touch</span>
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mt-3 mb-6">
-              Contact <span className="gradient-text">Us</span>
+              Contact <span className="text-primary">Us</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Ready to optimize your financial strategy? Reach out and let our experts guide you.
@@ -118,7 +118,7 @@ const ContactSection = () => {
                 </div>
                 <motion.button
                   type="submit"
-                  className="gradient-bg px-8 py-3 rounded-lg font-semibold text-primary-foreground flex items-center gap-2 hover:opacity-90 transition-opacity w-full justify-center"
+                  className="bg-primary px-8 py-3 rounded-lg font-semibold text-primary-foreground flex items-center gap-2 hover:opacity-90 transition-opacity w-full justify-center"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
