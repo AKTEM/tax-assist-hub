@@ -6,32 +6,34 @@
 
 @layer base {
   :root {
-    --background: 232 52% 22%;
+    --background-top: #0B0B3A;
+    --background-bottom: #000000;
+    --background: 234 70% 14%;
     --foreground: 0 0% 100%;
 
-    --card: 232 50% 18%;
+    --card: 234 60% 10%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 232 50% 18%;
+    --popover: 234 60% 10%;
     --popover-foreground: 0 0% 100%;
 
     --primary: 354 96% 46%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 232 80% 45%;
+    --secondary: 250 80% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 232 45% 25%;
+    --muted: 234 45% 18%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 232 80% 45%;
+    --accent: 250 80% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 232 40% 30%;
-    --input: 232 40% 30%;
+    --border: 234 40% 22%;
+    --input: 234 40% 22%;
     --ring: 354 96% 46%;
 
     --radius: 0.5rem;
@@ -39,18 +41,18 @@
     --header-bg: 0 0% 100%;
     --header-foreground: 0 0% 0%;
 
-    --gradient-red-blue: linear-gradient(135deg, hsl(354, 96%, 46%), hsl(232, 80%, 45%));
-    --gradient-blue-red: linear-gradient(135deg, hsl(232, 80%, 45%), hsl(354, 96%, 46%));
+    --gradient-red-blue: linear-gradient(135deg, hsl(354, 96%, 46%), hsl(250, 80%, 50%));
+    --gradient-blue-red: linear-gradient(135deg, hsl(250, 80%, 50%), hsl(354, 96%, 46%));
 
     --nav-text: 240 60% 17%;
 
-    --sidebar-background: 232 52% 20%;
+    --sidebar-background: 234 70% 12%;
     --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: 354 96% 46%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 232 80% 45%;
+    --sidebar-accent: 250 80% 50%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 232 40% 30%;
+    --sidebar-border: 234 40% 22%;
     --sidebar-ring: 354 96% 46%;
   }
 }
@@ -61,7 +63,10 @@
   }
 
   body {
-    @apply bg-background text-foreground font-poppins;
+    @apply text-foreground font-poppins;
+    background: linear-gradient(180deg, var(--background-top) 0%, var(--background-top) 30%, var(--background-bottom) 70%, var(--background-bottom) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 
   html {

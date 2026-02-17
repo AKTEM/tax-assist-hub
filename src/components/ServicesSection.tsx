@@ -17,6 +17,7 @@ import {
   TrendingUp,
   ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AnimatedCard = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
@@ -40,6 +41,7 @@ const services = [
     desc: "Comprehensive bookkeeping, financial statement preparation, payroll management, and accounting system implementation to keep your business finances organized and compliant.",
     color: "primary" as const,
     image: serviceAccounting,
+    slug: "accounting",
   },
   {
     icon: FileText,
@@ -47,6 +49,7 @@ const services = [
     desc: "Expert representation before tax authorities, IRS audit support, tax resolution, and compliance management to protect your business interests.",
     color: "secondary" as const,
     image: serviceIrs,
+    slug: "irs",
   },
   {
     icon: Building2,
@@ -54,6 +57,7 @@ const services = [
     desc: "Strategic tax planning, corporate and personal tax compliance, VAT management, transfer pricing, and tax advisory to optimize your tax position.",
     color: "primary" as const,
     image: serviceTaxation,
+    slug: "taxation",
   },
   {
     icon: Briefcase,
@@ -61,6 +65,7 @@ const services = [
     desc: "Business process optimization, organizational restructuring, risk management, and strategic advisory to drive operational efficiency and growth.",
     color: "secondary" as const,
     image: serviceConsultancy,
+    slug: "consultancy",
   },
   {
     icon: TrendingUp,
@@ -68,6 +73,7 @@ const services = [
     desc: "Financial due diligence, business valuation, merger and acquisition support, and investment advisory for informed business decisions.",
     color: "primary" as const,
     image: serviceAdvisory,
+    slug: "advisory",
   },
   {
     icon: GraduationCap,
@@ -75,6 +81,7 @@ const services = [
     desc: "Professional development programs, accounting standards training, tax compliance workshops, and leadership development for your team.",
     color: "secondary" as const,
     image: serviceTraining,
+    slug: "training",
   },
 ];
 
@@ -125,10 +132,10 @@ const ServicesSection = () => {
                   <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
                   <p className="text-muted-foreground leading-relaxed mb-4">{service.desc}</p>
                   
-                  <div className={`flex items-center gap-2 ${service.color === "primary" ? "text-primary" : "text-secondary"} font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+                  <Link to={`/services/${service.slug}`} className={`flex items-center gap-2 ${service.color === "primary" ? "text-primary" : "text-secondary"} font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
                     <span>Learn More</span>
                     <ArrowRight className="w-4 h-4" />
-                  </div>
+                  </Link>
                 </div>
               </motion.div>
             </AnimatedCard>

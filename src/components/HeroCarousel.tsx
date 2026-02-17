@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
@@ -80,18 +81,18 @@ const HeroCarousel = () => {
                 {slides[current].subtitle}
               </p>
               <div className="flex items-center justify-center gap-4">
-                <a
-                  href="#services"
+                <Link
+                  to="/services"
                   className="bg-primary px-8 py-3 rounded-md font-semibold text-primary-foreground hover:opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
                 >
                   Our Services
-                </a>
-                <a
-                  href="#contact"
+                </Link>
+                <Link
+                  to="/contact"
                   className="border border-foreground/30 px-8 py-3 rounded-md font-semibold text-foreground hover:bg-foreground/10 transition-all duration-300"
                 >
                   Contact Us
-                </a>
+                </Link>
               </div>
             </motion.div>
           </AnimatePresence>
