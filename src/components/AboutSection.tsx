@@ -16,6 +16,13 @@ import {
   BarChart3,
   PieChart,
   ArrowUpRight,
+  Handshake,
+  BookOpen,
+  Rocket,
+  ShieldCheck,
+  HeartHandshake,
+  Sparkles,
+  Zap,
 } from "lucide-react";
 import aboutPerson from "@/assets/about-person.png";
 
@@ -45,13 +52,13 @@ const coreValues = [
 ];
 
 const approachItems = [
-  "We understand our clients and their needs",
-  "We make it easy for our clients to get things right",
-  "We recognize our privileged access to information and protect it",
-  "We behave professionally and with integrity",
-  "We take pride in helping our clients to succeed",
-  "We develop the skills and tools needed to do our jobs well",
-  "We drive continuous improvement in everything we do",
+  { text: "We understand our clients and their needs", icon: Handshake },
+  { text: "We make it easy for our clients to get things right", icon: Sparkles },
+  { text: "We recognize our privileged access to information and protect it", icon: ShieldCheck },
+  { text: "We behave professionally and with integrity", icon: HeartHandshake },
+  { text: "We take pride in helping our clients to succeed", icon: Rocket },
+  { text: "We develop the skills and tools needed to do our jobs well", icon: BookOpen },
+  { text: "We drive continuous improvement in everything we do", icon: Zap },
 ];
 
 const stats = [
@@ -60,6 +67,46 @@ const stats = [
   { value: "98%", label: "Client Satisfaction", icon: PieChart },
   { value: "50+", label: "Professionals", icon: Award },
 ];
+
+const StatCard = ({ stat, index }: { stat: typeof stats[0]; index: number }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-30px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      className="glass-card p-5 text-center group hover:border-secondary/50 transition-all duration-500"
+      initial={{ opacity: 0, scale: 0.5, rotateY: 90 }}
+      animate={isInView ? { opacity: 1, scale: 1, rotateY: 0 } : {}}
+      transition={{ duration: 0.7, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+      whileHover={{ y: -5, scale: 1.02 }}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5, delay: 0.3 + index * 0.15 }}
+      >
+        <stat.icon className="w-7 h-7 text-secondary mx-auto mb-2 group-hover:text-primary transition-colors" />
+      </motion.div>
+      <motion.div
+        className="text-3xl font-bold text-foreground mb-1"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.5, delay: 0.5 + index * 0.15, type: "spring", stiffness: 200 }}
+      >
+        {stat.value}
+      </motion.div>
+      <motion.div
+        className="text-muted-foreground text-sm"
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.4, delay: 0.7 + index * 0.15 }}
+      >
+        {stat.label}
+      </motion.div>
+    </motion.div>
+  );
+};
 
 const AboutSection = () => {
   const sectionRef = useRef(null);
@@ -82,16 +129,8 @@ const AboutSection = () => {
 
               {/* 2x2 Stats Grid */}
               <div className="grid grid-cols-2 gap-4">
-                {stats.map((stat) => (
-                  <motion.div
-                    key={stat.label}
-                    className="glass-card p-5 text-center group hover:border-secondary/50 transition-all duration-500"
-                    whileHover={{ y: -5, scale: 1.02 }}
-                  >
-                    <stat.icon className="w-7 h-7 text-secondary mx-auto mb-2 group-hover:text-primary transition-colors" />
-                    <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
-                    <div className="text-muted-foreground text-sm">{stat.label}</div>
-                  </motion.div>
+                {stats.map((stat, i) => (
+                  <StatCard key={stat.label} stat={stat} index={i} />
                 ))}
               </div>
             </div>
@@ -215,10 +254,10 @@ const AboutSection = () => {
                 className="flex items-start gap-4 glass-card p-5 group hover:border-secondary/40 transition-all"
                 whileHover={{ x: 5 }}
               >
-                <div className="mt-1 p-1.5 rounded-full bg-secondary/15 shrink-0">
-                  <CheckCircle className="w-4 h-4 text-secondary" />
+                <div className="mt-1 p-2.5 rounded-xl bg-secondary/15 shrink-0 group-hover:bg-secondary/25 transition-colors">
+                  <item.icon className="w-5 h-5 text-secondary" />
                 </div>
-                <p className="text-muted-foreground group-hover:text-foreground transition-colors">{item}</p>
+                <p className="text-muted-foreground group-hover:text-foreground transition-colors">{item.text}</p>
               </motion.div>
             </AnimatedCard>
           ))}

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import contactBg from "@/assets/contact-bg.jpg";
 
 const AnimatedCard = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
@@ -30,11 +31,13 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic
   };
 
   return (
     <section id="contact" className="py-20 md:py-28 relative">
+      <div className="absolute inset-0">
+        <img src={contactBg} alt="" className="w-full h-full object-cover opacity-[0.06]" />
+      </div>
       <div className="absolute inset-0 bg-card/50" />
       <div className="container mx-auto px-4 relative z-10">
         <AnimatedCard>
