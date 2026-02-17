@@ -1,5 +1,22 @@
 import { ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
+
+const quickLinks = [
+  { label: "Home", path: "/" },
+  { label: "About Us", path: "/about" },
+  { label: "Services", path: "/services" },
+  { label: "Testimonials", path: "/testimonials" },
+  { label: "Contact", path: "/contact" },
+];
+
+const serviceLinks = [
+  { label: "Accounting Services", path: "/services/accounting" },
+  { label: "IRS Services", path: "/services/irs" },
+  { label: "Tax Management", path: "/services/taxation" },
+  { label: "Financial Advisory", path: "/services/advisory" },
+  { label: "Training & Development", path: "/services/training" },
+];
 
 const Footer = () => {
   return (
@@ -15,26 +32,25 @@ const Footer = () => {
           <div>
             <h4 className="text-foreground font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {["Home", "About Us", "Services", "Testimonials", "Contact"].map((link) => (
-                <li key={link}>
-                  <a
-                    href={`#${link.toLowerCase().replace(" ", "")}`}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link}
-                  </a>
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <Link to={link.path} className="text-muted-foreground hover:text-primary transition-colors">
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
           <div>
             <h4 className="text-foreground font-bold mb-4">Services</h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>Accounting Services</li>
-              <li>IRS Services</li>
-              <li>Tax Management</li>
-              <li>Financial Advisory</li>
-              <li>Training & Development</li>
+            <ul className="space-y-2">
+              {serviceLinks.map((link) => (
+                <li key={link.label}>
+                  <Link to={link.path} className="text-muted-foreground hover:text-primary transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
