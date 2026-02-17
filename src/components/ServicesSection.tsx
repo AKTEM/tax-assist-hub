@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import servicesBg from "@/assets/services-bg.jpg";
+import serviceAccounting from "@/assets/service-accounting.jpg";
+import serviceIrs from "@/assets/service-irs.jpg";
+import serviceTaxation from "@/assets/service-taxation.jpg";
+import serviceConsultancy from "@/assets/service-consultancy.jpg";
+import serviceAdvisory from "@/assets/service-advisory.jpg";
+import serviceTraining from "@/assets/service-training.jpg";
 import {
   Calculator,
   FileText,
@@ -33,36 +39,42 @@ const services = [
     title: "Accounting Services",
     desc: "Comprehensive bookkeeping, financial statement preparation, payroll management, and accounting system implementation to keep your business finances organized and compliant.",
     color: "primary" as const,
+    image: serviceAccounting,
   },
   {
     icon: FileText,
     title: "IRS Services",
     desc: "Expert representation before tax authorities, IRS audit support, tax resolution, and compliance management to protect your business interests.",
     color: "secondary" as const,
+    image: serviceIrs,
   },
   {
     icon: Building2,
     title: "Taxation & Tax Services",
     desc: "Strategic tax planning, corporate and personal tax compliance, VAT management, transfer pricing, and tax advisory to optimize your tax position.",
     color: "primary" as const,
+    image: serviceTaxation,
   },
   {
     icon: Briefcase,
     title: "Management Consultancy",
     desc: "Business process optimization, organizational restructuring, risk management, and strategic advisory to drive operational efficiency and growth.",
     color: "secondary" as const,
+    image: serviceConsultancy,
   },
   {
     icon: TrendingUp,
     title: "Financial Advisory Services",
     desc: "Financial due diligence, business valuation, merger and acquisition support, and investment advisory for informed business decisions.",
     color: "primary" as const,
+    image: serviceAdvisory,
   },
   {
     icon: GraduationCap,
     title: "Training & Development",
     desc: "Professional development programs, accounting standards training, tax compliance workshops, and leadership development for your team.",
     color: "secondary" as const,
+    image: serviceTraining,
   },
 ];
 
@@ -90,22 +102,33 @@ const ServicesSection = () => {
           {services.map((service, i) => (
             <AnimatedCard key={service.title} delay={0.1 + i * 0.08}>
               <motion.div
-                className="glass-card p-8 h-full group cursor-pointer relative overflow-hidden"
+                className="glass-card h-full group cursor-pointer relative overflow-hidden"
                 whileHover={{ y: -10, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className={`absolute top-0 left-0 w-full h-0.5 ${service.color === "primary" ? "bg-primary" : "bg-secondary"} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
-                
-                <div className={`p-4 rounded-xl ${service.color === "primary" ? "bg-primary/10" : "bg-secondary/10"} inline-block mb-5 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className={`w-8 h-8 ${service.color === "primary" ? "text-primary" : "text-secondary"}`} />
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-background/40" />
+                  <div className={`absolute top-4 left-4 p-3 rounded-xl ${service.color === "primary" ? "bg-primary" : "bg-secondary"}`}>
+                    <service.icon className="w-6 h-6 text-primary-foreground" />
+                  </div>
                 </div>
-                
-                <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">{service.desc}</p>
-                
-                <div className={`flex items-center gap-2 ${service.color === "primary" ? "text-primary" : "text-secondary"} font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
-                  <span>Learn More</span>
-                  <ArrowRight className="w-4 h-4" />
+
+                <div className="p-6">
+                  <div className={`absolute top-48 left-0 w-full h-0.5 ${service.color === "primary" ? "bg-primary" : "bg-secondary"} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
+                  
+                  <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-4">{service.desc}</p>
+                  
+                  <div className={`flex items-center gap-2 ${service.color === "primary" ? "text-primary" : "text-secondary"} font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+                    <span>Learn More</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
                 </div>
               </motion.div>
             </AnimatedCard>

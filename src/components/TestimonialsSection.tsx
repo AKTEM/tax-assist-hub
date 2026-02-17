@@ -94,7 +94,7 @@ const TestimonialsSection = () => {
                     key={i}
                     onClick={() => setCurrent(i)}
                     className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                      i === current ? "gradient-bg w-7" : "bg-muted-foreground/30"
+                      i === current ? "bg-secondary w-7" : "bg-muted-foreground/30"
                     }`}
                   />
                 ))}

@@ -66,7 +66,7 @@ const HeroCarousel = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <motion.span
-                className="inline-block gradient-bg px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-widest text-primary-foreground mb-6"
+                className="inline-block bg-primary px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-widest text-primary-foreground mb-6"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4 }}
@@ -82,7 +82,7 @@ const HeroCarousel = () => {
               <div className="flex items-center justify-center gap-4">
                 <a
                   href="#services"
-                  className="gradient-bg px-8 py-3 rounded-md font-semibold text-primary-foreground hover:opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
+                  className="bg-primary px-8 py-3 rounded-md font-semibold text-primary-foreground hover:opacity-90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
                 >
                   Our Services
                 </a>
@@ -119,7 +119,7 @@ const HeroCarousel = () => {
             key={i}
             onClick={() => setCurrent(i)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              i === current ? "gradient-bg w-8" : "bg-foreground/30"
+              i === current ? "bg-primary w-8" : "bg-foreground/30"
             }`}
           />
         ))}
