@@ -53,7 +53,7 @@ const ContactSection = () => {
         </AnimatedCard>
 
         <div className="grid lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
-          {/* Contact Info */}
+          {/* Contact Info - Left */}
           <div className="lg:col-span-2 space-y-4">
             {contactInfo.map((item, i) => (
               <AnimatedCard key={item.label} delay={0.1 + i * 0.08}>
@@ -73,10 +73,10 @@ const ContactSection = () => {
             ))}
           </div>
 
-          {/* Form */}
+          {/* Form - Right, filling remaining space */}
           <AnimatedCard delay={0.2}>
-            <div className="lg:col-span-3 glass-card p-8">
-              <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="lg:col-span-3 glass-card p-8 h-full">
+              <form onSubmit={handleSubmit} className="space-y-5 h-full flex flex-col">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="text-foreground text-sm font-medium block mb-2">Full Name</label>
@@ -109,13 +109,13 @@ const ContactSection = () => {
                     placeholder="How can we help?"
                   />
                 </div>
-                <div>
+                <div className="flex-1">
                   <label className="text-foreground text-sm font-medium block mb-2">Message</label>
                   <textarea
-                    rows={5}
+                    rows={6}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
+                    className="w-full h-full min-h-[150px] bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
                     placeholder="Tell us about your needs..."
                   />
                 </div>

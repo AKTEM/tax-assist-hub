@@ -132,7 +132,10 @@ const ServicesSection = () => {
                   <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
                   <p className="text-muted-foreground leading-relaxed mb-4">{service.desc}</p>
                   
-                  <Link to={`/services/${service.slug}`} className={`flex items-center gap-2 ${service.color === "primary" ? "text-primary" : "text-secondary"} font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="inline-flex items-center gap-2 bg-secondary px-5 py-2 rounded-lg text-secondary-foreground font-medium text-sm hover:opacity-90 transition-opacity mt-1"
+                  >
                     <span>Learn More</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>

@@ -25,11 +25,14 @@ import {
   Zap,
 } from "lucide-react";
 import aboutPerson from "@/assets/about-person.png";
+import missionImg from "@/assets/mission-img.jpg";
+import visionImg from "@/assets/vision-img.jpg";
+import philosophyImg from "@/assets/philosophy-img.jpg";
+import valuesImg from "@/assets/values-img.jpg";
 
 const AnimatedCard = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-
   return (
     <motion.div
       ref={ref}
@@ -109,14 +112,11 @@ const StatCard = ({ stat, index }: { stat: typeof stats[0]; index: number }) => 
 };
 
 const AboutSection = () => {
-  const sectionRef = useRef(null);
-
   return (
-    <section id="about" className="py-20 md:py-28 relative" ref={sectionRef}>
+    <section id="about" className="py-20 md:py-28 relative">
       <div className="container mx-auto px-4">
         {/* Hero About: Text + Stats LEFT, Image RIGHT */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          {/* Left side */}
           <AnimatedCard>
             <div>
               <span className="text-primary font-semibold uppercase tracking-widest text-sm">Who We Are</span>
@@ -126,8 +126,6 @@ const AboutSection = () => {
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                 Tax Assist Solutions is a firm of young and dynamic Chartered Accountants focused on providing Accounting, Financial and advisory services to companies in various sectors of the economy. We leverage on our smart approach to delivering quality services as our clients appreciate our professional competence and ability to understand and satisfy the needs of all stakeholders.
               </p>
-
-              {/* 2x2 Stats Grid */}
               <div className="grid grid-cols-2 gap-4">
                 {stats.map((stat, i) => (
                   <StatCard key={stat.label} stat={stat} index={i} />
@@ -136,7 +134,6 @@ const AboutSection = () => {
             </div>
           </AnimatedCard>
 
-          {/* Right side - Image */}
           <AnimatedCard delay={0.2}>
             <div className="flex justify-center lg:justify-end">
               <img
@@ -148,92 +145,108 @@ const AboutSection = () => {
           </AnimatedCard>
         </div>
 
-        {/* Mission & Vision */}
+        {/* Mission & Vision - with images */}
         <div className="grid md:grid-cols-2 gap-8 mb-20">
           <AnimatedCard delay={0.15}>
             <motion.div
-              className="glass-card p-8 h-full relative overflow-hidden group"
+              className="glass-card h-full relative overflow-hidden group"
               whileHover={{ scale: 1.01 }}
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 rounded-lg bg-primary/15">
-                  <Target className="w-7 h-7 text-primary" />
+              <div className="relative h-48 overflow-hidden">
+                <img src={missionImg} alt="Our Mission" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-background/50" />
+                <div className="absolute top-4 left-4 p-3 rounded-xl bg-primary">
+                  <Target className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">Our Mission</h3>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                To continuously add value to our clients to be highly competitive within the industry they operate.
-              </p>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  To continuously add value to our clients to be highly competitive within the industry they operate.
+                </p>
+              </div>
               <ArrowUpRight className="absolute bottom-4 right-4 w-6 h-6 text-primary/30 group-hover:text-primary transition-colors" />
             </motion.div>
           </AnimatedCard>
 
           <AnimatedCard delay={0.2}>
             <motion.div
-              className="glass-card p-8 h-full relative overflow-hidden group"
+              className="glass-card h-full relative overflow-hidden group"
               whileHover={{ scale: 1.01 }}
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-secondary" />
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 rounded-lg bg-secondary/15">
-                  <Eye className="w-7 h-7 text-secondary" />
+              <div className="relative h-48 overflow-hidden">
+                <img src={visionImg} alt="Our Vision" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-background/50" />
+                <div className="absolute top-4 left-4 p-3 rounded-xl bg-secondary">
+                  <Eye className="w-6 h-6 text-secondary-foreground" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">Our Vision</h3>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                To be the leading indigenous Accounting Services firm in Africa and beyond.
-              </p>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  To be the leading indigenous Accounting Services firm in Africa and beyond.
+                </p>
+              </div>
               <ArrowUpRight className="absolute bottom-4 right-4 w-6 h-6 text-secondary/30 group-hover:text-secondary transition-colors" />
             </motion.div>
           </AnimatedCard>
         </div>
 
-        {/* Philosophy */}
+        {/* Philosophy - with image */}
         <AnimatedCard delay={0.25}>
-          <div className="glass-card p-8 md:p-12 mb-20 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-primary" />
-            <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 rounded-lg bg-primary/15">
-                <Lightbulb className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground">Our Philosophy</h3>
-            </div>
-            <p className="text-muted-foreground leading-relaxed text-lg mb-4">
-              The objective of the firm is to render the highest quality service to our clients. We are dynamic and innovative; hence we react spontaneously with up-to-date information to our clients' needs. The firm is built on a high level balance between responsiveness to the need of the clients and the highest professional standard of independence and objectivity.
-            </p>
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              A major characteristic of the firm lies in the nature of our relationship with the clients. Partners and professional staff particularly place emphasis on maintaining independence and objectivity while at the same time building a cardinal understanding of clients' problems and getting involved in their solution.
-            </p>
-          </div>
-        </AnimatedCard>
-
-        {/* Core Values */}
-        <AnimatedCard delay={0.1}>
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <Heart className="w-6 h-6 text-primary" />
-              <span className="text-primary font-semibold uppercase tracking-widest text-sm">What Drives Us</span>
-            </div>
-            <h3 className="text-3xl md:text-4xl font-bold text-foreground">Core Values</h3>
-          </div>
-        </AnimatedCard>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-          {coreValues.map((val, i) => (
-            <AnimatedCard key={val.title} delay={0.1 + i * 0.08}>
-              <motion.div
-                className="glass-card p-6 group hover:border-secondary/40 transition-all duration-500 h-full"
-                whileHover={{ y: -8, scale: 1.02 }}
-              >
-                <div className="p-3 rounded-lg bg-secondary/10 inline-block mb-4 group-hover:bg-secondary/20 transition-colors">
-                  <val.icon className="w-6 h-6 text-secondary" />
+          <div className="glass-card mb-20 relative overflow-hidden">
+            <div className="grid md:grid-cols-2">
+              <div className="relative h-64 md:h-auto overflow-hidden">
+                <img src={philosophyImg} alt="Our Philosophy" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-background/30" />
+                <div className="absolute top-4 left-4 p-3 rounded-xl bg-primary">
+                  <Lightbulb className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <h4 className="text-xl font-bold text-foreground mb-2">{val.title}</h4>
-                <p className="text-muted-foreground leading-relaxed">{val.desc}</p>
-              </motion.div>
-            </AnimatedCard>
-          ))}
+              </div>
+              <div className="p-8 md:p-12">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Our Philosophy</h3>
+                <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                  The objective of the firm is to render the highest quality service to our clients. We are dynamic and innovative; hence we react spontaneously with up-to-date information to our clients' needs.
+                </p>
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  A major characteristic of the firm lies in the nature of our relationship with the clients. Partners and professional staff particularly place emphasis on maintaining independence and objectivity while building a cardinal understanding of clients' problems.
+                </p>
+              </div>
+            </div>
+          </div>
+        </AnimatedCard>
+
+        {/* Core Values - with background image */}
+        <div className="relative mb-20">
+          <div className="absolute inset-0 rounded-2xl overflow-hidden">
+            <img src={valuesImg} alt="" className="w-full h-full object-cover opacity-[0.06]" />
+          </div>
+          <AnimatedCard delay={0.1}>
+            <div className="text-center mb-12 relative z-10">
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <Heart className="w-6 h-6 text-primary" />
+                <span className="text-primary font-semibold uppercase tracking-widest text-sm">What Drives Us</span>
+              </div>
+              <h3 className="text-3xl md:text-4xl font-bold text-foreground">Core Values</h3>
+            </div>
+          </AnimatedCard>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+            {coreValues.map((val, i) => (
+              <AnimatedCard key={val.title} delay={0.1 + i * 0.08}>
+                <motion.div
+                  className="glass-card p-6 group hover:border-secondary/40 transition-all duration-500 h-full"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                >
+                  <div className="p-3 rounded-lg bg-secondary/10 inline-block mb-4 group-hover:bg-secondary/20 transition-colors">
+                    <val.icon className="w-6 h-6 text-secondary" />
+                  </div>
+                  <h4 className="text-xl font-bold text-foreground mb-2">{val.title}</h4>
+                  <p className="text-muted-foreground leading-relaxed">{val.desc}</p>
+                </motion.div>
+              </AnimatedCard>
+            ))}
+          </div>
         </div>
 
         {/* Our Approach */}
