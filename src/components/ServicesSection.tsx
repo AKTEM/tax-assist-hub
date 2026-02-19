@@ -109,12 +109,12 @@ const ServicesSection = () => {
           {services.map((service, i) => (
             <AnimatedCard key={service.title} delay={0.1 + i * 0.08}>
               <motion.div
-                className="glass-card h-full group cursor-pointer relative overflow-hidden"
+                className="glass-card h-full group cursor-pointer relative overflow-hidden flex flex-col"
                 whileHover={{ y: -10, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
                 {/* Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden flex-shrink-0">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -126,15 +126,15 @@ const ServicesSection = () => {
                   </div>
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <div className={`absolute top-48 left-0 w-full h-0.5 ${service.color === "primary" ? "bg-primary" : "bg-secondary"} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
                   
                   <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">{service.desc}</p>
+                  <p className="text-muted-foreground leading-relaxed mb-4 flex-1">{service.desc}</p>
                   
                   <Link
                     to={`/services/${service.slug}`}
-                    className="inline-flex items-center gap-2 bg-secondary px-5 py-2 rounded-lg text-secondary-foreground font-medium text-sm hover:opacity-90 transition-opacity mt-1"
+                    className="inline-flex items-center gap-2 bg-secondary px-5 py-2 rounded-lg text-secondary-foreground font-medium text-sm hover:opacity-90 transition-opacity mt-auto self-start"
                   >
                     <span>Learn More</span>
                     <ArrowRight className="w-4 h-4" />

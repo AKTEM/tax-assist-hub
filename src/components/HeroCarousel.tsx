@@ -67,7 +67,7 @@ const HeroCarousel = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <motion.span
-                className="inline-block bg-primary px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-widest text-primary-foreground mb-6"
+                className="inline-block bg-white/50 border border-white/80 px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-widest text-white mb-6"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.4 }}

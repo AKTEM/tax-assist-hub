@@ -52,7 +52,7 @@ const ContactSection = () => {
           </div>
         </AnimatedCard>
 
-        <div className="grid lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-5 gap-8 max-w-6xl mx-auto items-stretch">
           {/* Contact Info - Left */}
           <div className="lg:col-span-2 space-y-4">
             {contactInfo.map((item, i) => (
@@ -73,64 +73,65 @@ const ContactSection = () => {
             ))}
           </div>
 
-          {/* Form - Right, filling remaining space */}
-          <AnimatedCard delay={0.2}>
-            <div className="lg:col-span-3 glass-card p-8 h-full">
-              <form onSubmit={handleSubmit} className="space-y-5 h-full flex flex-col">
-                <div className="grid sm:grid-cols-2 gap-5">
+          {/* Form - Right */}
+          <div className="lg:col-span-3">
+            <AnimatedCard delay={0.2}>
+              <div className="glass-card p-8 h-full border border-border/30 rounded-2xl">
+                <form onSubmit={handleSubmit} className="flex flex-col h-full gap-5">
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div>
+                      <label className="text-foreground text-sm font-bold block mb-2">Full Name</label>
+                      <input
+                        type="text"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full bg-card/80 border border-border/50 rounded-lg px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-foreground text-sm font-bold block mb-2">Email</label>
+                      <input
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full bg-card/80 border border-border/50 rounded-lg px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                  </div>
                   <div>
-                    <label className="text-foreground text-sm font-medium block mb-2">Full Name</label>
+                    <label className="text-foreground text-sm font-bold block mb-2">Subject</label>
                     <input
                       type="text"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                      placeholder="John Doe"
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      className="w-full bg-card/80 border border-border/50 rounded-lg px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                      placeholder="How can we help?"
                     />
                   </div>
-                  <div>
-                    <label className="text-foreground text-sm font-medium block mb-2">Email</label>
-                    <input
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                      placeholder="john@example.com"
+                  <div className="flex-1">
+                    <label className="text-foreground text-sm font-bold block mb-2">Message</label>
+                    <textarea
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full bg-card/80 border border-border/50 rounded-lg px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none min-h-[220px] h-full"
+                      placeholder="Tell us about your needs..."
                     />
                   </div>
-                </div>
-                <div>
-                  <label className="text-foreground text-sm font-medium block mb-2">Subject</label>
-                  <input
-                    type="text"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                    placeholder="How can we help?"
-                  />
-                </div>
-                <div className="flex-1">
-                  <label className="text-foreground text-sm font-medium block mb-2">Message</label>
-                  <textarea
-                    rows={6}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full h-full min-h-[150px] bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
-                    placeholder="Tell us about your needs..."
-                  />
-                </div>
-                <motion.button
-                  type="submit"
-                  className="bg-primary px-8 py-3 rounded-lg font-semibold text-primary-foreground flex items-center gap-2 hover:opacity-90 transition-opacity w-full justify-center"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Send className="w-4 h-4" />
-                  Send Message
-                </motion.button>
-              </form>
-            </div>
-          </AnimatedCard>
+                  <motion.button
+                    type="submit"
+                    className="bg-primary px-8 py-4 rounded-lg font-semibold text-primary-foreground flex items-center gap-2 hover:opacity-90 transition-opacity w-full justify-center text-base"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Send className="w-5 h-5" />
+                    Send Message
+                  </motion.button>
+                </form>
+              </div>
+            </AnimatedCard>
+          </div>
         </div>
       </div>
     </section>
