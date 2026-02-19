@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import ctaBg from "@/assets/cta-bg.jpg";
 
@@ -26,7 +26,7 @@ const CTASection = () => {
           className="text-center max-w-3xl mx-auto"
         >
           <motion.span
-            className="inline-block bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wider mb-6"
+            className="inline-block bg-white/50 text-white px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wider mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.2 }}
@@ -46,13 +46,16 @@ const CTASection = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <Link
-                to="/contact"
-                className="bg-primary px-8 py-4 rounded-lg font-semibold text-primary-foreground flex items-center gap-2 hover:opacity-90 transition-opacity shadow-lg shadow-primary/30"
+              <a
+                href="https://wa.me/2340800000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-lg font-semibold text-white flex items-center gap-2 transition-opacity shadow-lg hover:opacity-90"
+                style={{ backgroundColor: "#25D366" }}
               >
-                Schedule Free Consultation
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+                <MessageCircle className="w-5 h-5" />
+                Send a DM
+              </a>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
               <a
