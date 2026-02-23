@@ -51,14 +51,14 @@ const coreValues = [
   { icon: Lock, title: "Confidentiality", desc: "We protect clients' information with strict confidential discipline." },
   { icon: TrendingUp, title: "Innovation", desc: "We are dynamic and innovative, reacting with up-to-date solutions." },
   { icon: Users, title: "Client Focus", desc: "Understanding our clients and their needs is our top priority." },
-  { icon: CheckCircle, title: "Quality", desc: "Quality is REST Assured — we drive continuous improvement." },
+  { icon: CheckCircle, title: "Quality", desc: "We drive continuous improvement in everything we do." },
 ];
 
 const approachItems = [
-  { text: "We understand our clients and their needs", icon: Handshake },
-  { text: "We make it easy for our clients to get things right", icon: Sparkles },
-  { text: "We recognize our privileged access to information and protect it", icon: ShieldCheck },
-  { text: "We behave professionally and with integrity", icon: HeartHandshake },
+  { text: "We understand our clients business needs, we comprehend their business specific language.", icon: Handshake },
+  { text: "Our hands on and personal approach benefits the interests of both clients and staff.", icon: Sparkles },
+  { text: "We help our clients explore extraordinary opportunities and sustain growth.", icon: ShieldCheck },
+  { text: "Our size and commitment to quality provides the right platform for success.", icon: HeartHandshake },
   { text: "We take pride in helping our clients to succeed", icon: Rocket },
   { text: "We develop the skills and tools needed to do our jobs well", icon: BookOpen },
   { text: "We drive continuous improvement in everything we do", icon: Zap },
@@ -276,11 +276,6 @@ const AboutSection = () => {
           ))}
         </div>
 
-        <AnimatedCard delay={0.5}>
-          <div className="text-center mt-8">
-            <p className="text-2xl font-bold text-primary">Quality is REST Assured.</p>
-          </div>
-        </AnimatedCard>
       </div>
     </section>
   );

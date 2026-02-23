@@ -47,7 +47,7 @@ const CTASection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
               <a
-                href="https://wa.me/2340800000000"
+                href="https://wa.me/2348169005556"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 rounded-lg font-semibold text-white flex items-center gap-2 transition-opacity shadow-lg hover:opacity-90"
@@ -59,7 +59,7 @@ const CTASection = () => {
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
               <a
-                href="tel:+2340800000000"
+                href="tel:+2348169005556"
                 className="bg-secondary px-8 py-4 rounded-lg font-semibold text-secondary-foreground flex items-center gap-2 hover:opacity-90 transition-opacity shadow-lg shadow-secondary/30"
               >
                 <Phone className="w-5 h-5" />
