@@ -27,7 +27,7 @@ const AnimatedCard = ({ children, delay = 0 }: { children: React.ReactNode; dela
 const faqs = [
   {
     q: "What services does Tax Assist Solutions offer?",
-    a: "We offer a comprehensive range of services including Accounting, IRS Services, Taxation & Tax Planning, Management Consultancy, Financial Advisory, and Training & Development programs tailored for businesses across various sectors.",
+    a: "We offer a comprehensive range of services including Accounting, IFRS Services, Taxation & Tax Planning, Management Consultancy, Financial Advisory, and Training & Development programs tailored for businesses across various sectors.",
   },
   {
     q: "How can Tax Assist Solutions help my business with tax planning?",

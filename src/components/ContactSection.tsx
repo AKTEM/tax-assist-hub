@@ -20,8 +20,8 @@ const AnimatedCard = ({ children, delay = 0 }: { children: React.ReactNode; dela
 };
 
 const contactInfo = [
-  { icon: MapPin, label: "Office Address", value: "Lagos, Nigeria" },
-  { icon: Phone, label: "Phone", value: "+234 (0) 800 000 0000" },
+  { icon: MapPin, label: "Office Address", value: "14 Ogunkoya Street, Ikosi Ketu, Lagos" },
+  { icon: Phone, label: "Phone", value: "0816 900 5556" },
   { icon: Mail, label: "Email", value: "info@taxassistsolutions.com" },
   { icon: Clock, label: "Working Hours", value: "Mon - Fri: 8AM - 6PM" },
 ];

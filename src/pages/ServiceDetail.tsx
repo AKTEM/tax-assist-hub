@@ -32,29 +32,28 @@ const serviceData: Record<string, {
     icon: Calculator,
     image: serviceAccounting,
     description:
-      "Our comprehensive accounting services are designed to keep your business finances organized, compliant, and optimized for growth. We provide end-to-end financial management solutions tailored to your specific industry and business size.",
+      "We provide the following accountancy services:",
     points: [
-      "Comprehensive bookkeeping and financial record management",
-      "Financial statement preparation and analysis",
-      "Payroll management and processing",
-      "Accounting system implementation and optimization",
-      "Budgeting and financial forecasting",
-      "Regulatory compliance and reporting",
+      "Writing up accounting books",
+      "Preparing financial reports and schedules required by statutory auditors or Management",
+      "Reconciliation of Account balances; e.g. Cash-in-transit account, Unclear Effect account, Imprest Account, Cheques for collection, bad & doubtful debts etc.",
+      "Designing, installation and monitoring of accounting systems",
+      "Preparation of fixed asset register",
+      "Computerization of accounting system",
+      "And other related accounting services",
     ],
   },
-  irs: {
-    title: "IRS Services",
+  ifrs: {
+    title: "IFRS Services",
     icon: FileText,
     image: serviceIrs,
     description:
-      "Our IRS services provide expert representation and support when dealing with tax authorities. We protect your business interests with comprehensive audit support, tax resolution, and compliance management.",
+      "Our firm is adequately equipped with highly qualified experienced IFRS professionals to carry out IFRS related assignments. Our IFRS team has been involved in training of clients on IFRS implementation and reporting, conversion of Nigeria GAAP financial statements to IFRS financial statements.",
     points: [
-      "Expert representation before tax authorities",
-      "IRS audit support and defense",
-      "Tax resolution and dispute settlement",
-      "Compliance management and monitoring",
-      "Penalty abatement and relief negotiations",
-      "Proactive audit risk assessment",
+      "IFRS reporting",
+      "IFRS training (Introduction, Intermediate and Advanced)",
+      "IFRS conversion and implementation",
+      "IFRS advisory and consultancy",
     ],
   },
   taxation: {
@@ -62,14 +61,21 @@ const serviceData: Record<string, {
     icon: Building2,
     image: serviceTaxation,
     description:
-      "Strategic tax planning and compliance services to optimize your tax position. Our team ensures you meet all obligations while taking advantage of every legitimate opportunity to minimize your tax burden.",
+      "We handle both corporate and personal taxation matters. We assist in processing and filing of tax returns and negotiate with the tax authorities on your annual tax computations. We also handle queries that may be raised by the tax authorities. We notify our clients on the tax due dates for payments, submitting and negotiating of returns. Where substantial capital investments or borrowing are proposed, we also provide tax-planning advice in order to arrange your affairs in the most tax effective manner. In addition, we provide individual tax planning service for senior/management staff of our clients.",
     points: [
-      "Strategic corporate and personal tax planning",
-      "VAT management and compliance",
-      "Transfer pricing advisory",
-      "Tax compliance and filing",
-      "International tax structuring",
-      "Tax incentive identification and application",
+      "Corporate Income Tax (CIT) Compliance Management — registering, preparing/reviewing returns, filing, payments, responding to queries, objecting to incorrect assessments, filing WHT credit notes",
+      "Value Added Tax (VAT) Compliance Management — registration, identifying input/output tax items, checking monthly returns, ensuring prompt submission, making payments",
+      "Withholding Tax (WHT) Compliance & Management — identification of transactions, correct rate application, effective remittance process, obtaining credit notes",
+      "Personal Income Tax (PIT) Compliance Management — PAYE services including monthly payroll, tax forms, returns, and tax clearance certificates",
+      "Expatriate Tax Services — preparation and filing of annual returns, review assessments, assist with payments, obtain tax clearance certificates",
+      "Compliance with other State Taxes — Business Premises fee, Development levy, and other state tax computations",
+      "Tax Health Check / Due Diligence Exercise — independent review of tax issues, detailed summary of identified exposures, best practices recommendations",
+      "Tax Audit Support Services — providing support during audit, reviewing findings, liaising with Revenue, obtaining final clearance",
+      "Tax Investigations — similar scope to audit support for less frequent investigations",
+      "Procurement of Acceptance Certificates for Fixed Assets — preparing analysis, collating documents, submitting to authorities, obtaining certificates",
+      "Strategic Tax Planning — structuring business activities to minimize tax burden, advising on tax-efficient decisions, maximizing incentives and capital allowances",
+      "In-House Tax Training — training staff on PAYE, CIT, VAT, Pension Reform, WHT applicability",
+      "Comprehensive Tax Bureau Service — structuring activities, advising on business decisions, maximizing tax law advantages",
     ],
   },
   consultancy: {
@@ -77,14 +83,16 @@ const serviceData: Record<string, {
     icon: Briefcase,
     image: serviceConsultancy,
     description:
-      "Our management consultancy services help organizations optimize their operations, restructure for efficiency, and develop strategies for sustainable growth. We bring practical solutions backed by deep industry expertise.",
+      "Our consultancy unit renders the following consultancy services among others:",
     points: [
-      "Business process optimization",
-      "Organizational restructuring and design",
-      "Risk management and mitigation",
-      "Strategic planning and advisory",
-      "Performance management systems",
-      "Change management and implementation",
+      "Analyzing profitability by products/markets",
+      "Responsibility accounting, profit planning and budgeting",
+      "Project Management",
+      "Preparing contract bids and proposals",
+      "Advising on capital needs and alternative methods of financing business growth",
+      "Feasibility reports / Business Plan",
+      "Manpower and personnel audit",
+      "Change Management",
     ],
   },
   advisory: {
@@ -92,14 +100,14 @@ const serviceData: Record<string, {
     icon: TrendingUp,
     image: serviceAdvisory,
     description:
-      "Our financial advisory services provide the insights and analysis needed for critical business decisions. From mergers and acquisitions to business valuations, we deliver actionable intelligence.",
+      "We provide a broad range of financial advisory services for both public and private sectors of the economy. Some of these services include the following:",
     points: [
-      "Financial due diligence",
-      "Business valuation and appraisal",
-      "Merger and acquisition advisory",
-      "Investment analysis and advisory",
-      "Capital raising and structuring",
-      "Financial restructuring support",
+      "Financial projections",
+      "Financial planning and control",
+      "Profit planning and budgeting",
+      "Investment and venture analysis",
+      "Working capital management",
+      "Consulting on loan and credit applications",
     ],
   },
   training: {
@@ -107,14 +115,12 @@ const serviceData: Record<string, {
     icon: GraduationCap,
     image: serviceTraining,
     description:
-      "We offer professional development programs designed to build capacity within your organization. Our training covers accounting standards, tax compliance, leadership, and more.",
+      "The most significant resources of an organization is often said to be her human resources. Such claims appear in organization annual report and mission statement. In this connection there is need for training and development of staff so that they can be relevant in this dynamic and hostile business environment. Our training and development unit ensures that staffs are given regular and relevant training on the basis of needs of individuals and categories of staff. We also develop and present training courses specifically tailored towards improving the staff skills. These courses cover a wide range of subjects and the details are available on request.",
     points: [
-      "Professional development programs",
-      "Accounting standards training (IFRS, GAAP)",
-      "Tax compliance workshops",
-      "Leadership and management development",
-      "Financial literacy programs",
-      "Custom corporate training solutions",
+      "Regular and relevant staff training based on individual and category needs",
+      "Custom training courses tailored to improve staff skills",
+      "Wide range of subjects covered",
+      "Training details available on request",
     ],
   },
 };
@@ -171,7 +177,7 @@ const ServiceDetail = () => {
             <p className="text-muted-foreground text-lg leading-relaxed mb-12">{service.description}</p>
 
             <h2 className="text-2xl font-bold text-foreground mb-8">What We Offer</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-1 gap-4">
               {service.points.map((point, i) => (
                 <motion.div
                   key={i}

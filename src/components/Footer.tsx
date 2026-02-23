@@ -12,7 +12,7 @@ const quickLinks = [
 
 const serviceLinks = [
   { label: "Accounting Services", path: "/services/accounting" },
-  { label: "IRS Services", path: "/services/irs" },
+  { label: "IFRS Services", path: "/services/ifrs" },
   { label: "Tax Management", path: "/services/taxation" },
   { label: "Financial Advisory", path: "/services/advisory" },
   { label: "Training & Development", path: "/services/training" },

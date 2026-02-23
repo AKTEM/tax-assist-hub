@@ -9,18 +9,18 @@ import hero3 from "@/assets/hero-3.jpg";
 const slides = [
   {
     image: hero1,
-    title: "Expert Tax & Advisory Services",
-    subtitle: "Empowering businesses with smart financial solutions tailored for growth and compliance.",
+    title: "Future Proof Your Business",
+    subtitle: "We employ a smart approach to delivering quality services to our clients.",
   },
   {
     image: hero2,
-    title: "Precision in Every Detail",
-    subtitle: "Meticulous accounting, tax management, and audit services to keep your finances on track.",
+    title: "Advisory Services",
+    subtitle: "Working with you to bring your desired aim.",
   },
   {
     image: hero3,
-    title: "Your Trusted Financial Partner",
-    subtitle: "Building lasting partnerships through professional competence, integrity, and innovation.",
+    title: "Tax Services",
+    subtitle: "An accurate and clean approach for your business.",
   },
 ];
 
