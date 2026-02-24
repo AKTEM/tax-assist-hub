@@ -107,7 +107,7 @@ const Header = () => {
           )}
           <Link
             to="/contact"
-            className="bg-primary px-5 py-2 rounded-md text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+            className="bg-secondary px-5 py-2 rounded-md text-sm font-semibold text-secondary-foreground hover:opacity-90 transition-opacity"
           >
             Get Started
           </Link>
@@ -174,7 +174,7 @@ const Header = () => {
               )}
               <Link
                 to="/contact"
-                className="bg-primary px-6 py-2 rounded-md text-sm font-semibold text-primary-foreground"
+                className="bg-secondary px-6 py-2 rounded-md text-sm font-semibold text-secondary-foreground"
               >
                 Get Started
               </Link>
