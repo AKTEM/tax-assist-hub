@@ -102,13 +102,13 @@ const HeroCarousel = () => {
       {/* Arrows */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/40 backdrop-blur-sm text-foreground hover:bg-primary/80 transition-colors"
+        className="absolute left-2 md:left-6 bottom-20 md:bottom-8 p-2 rounded-full bg-background/40 backdrop-blur-sm text-foreground hover:bg-primary/80 transition-colors z-10"
       >
         <ChevronLeft size={24} />
       </button>
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-background/40 backdrop-blur-sm text-foreground hover:bg-primary/80 transition-colors"
+        className="absolute right-2 md:right-6 bottom-20 md:bottom-8 p-2 rounded-full bg-background/40 backdrop-blur-sm text-foreground hover:bg-primary/80 transition-colors z-10"
       >
         <ChevronRight size={24} />
       </button>
