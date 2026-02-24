@@ -86,7 +86,7 @@ const ContactSection = () => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full bg-card/80 border border-border/50 rounded-lg px-4 py-3.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                        placeholder="John Doe"
+                        placeholder="Joel"
                       />
                     </div>
                     <div>
