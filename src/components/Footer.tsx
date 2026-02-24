@@ -1,6 +1,6 @@
 import { ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/footer-logo.png";
 
 const quickLinks = [
   { label: "Home", path: "/" },
