@@ -121,7 +121,7 @@ const AboutSection = () => {
             <div>
               <span className="text-primary font-semibold uppercase tracking-widest text-sm">Who We Are</span>
               <h2 className="text-3xl md:text-5xl font-bold text-foreground mt-3 mb-6">
-                About <span className="text-primary">Tax Assist Solutions</span>
+                About Tax Assist Solutions
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                 Tax Assist Solutions is a firm of young and dynamic Chartered Accountants focused on providing Accounting, Financial and advisory services to companies in various sectors of the economy. We leverage on our smart approach to delivering quality services as our clients appreciate our professional competence and ability to understand and satisfy the needs of all stakeholders.
@@ -196,8 +196,8 @@ const AboutSection = () => {
         <AnimatedCard delay={0.25}>
           <div className="glass-card mb-20 relative overflow-hidden">
             <div className="grid md:grid-cols-2">
-              <div className="relative h-64 md:h-auto overflow-hidden">
-                <img src={philosophyImg} alt="Our Philosophy" className="w-full h-full object-cover" />
+              <div className="relative h-64 md:h-full overflow-hidden">
+                <img src={philosophyImg} alt="Our Philosophy" className="w-full h-full object-cover max-h-full" />
                 <div className="absolute inset-0 bg-background/30" />
                 <div className="absolute top-4 left-4 p-3 rounded-xl bg-primary">
                   <Lightbulb className="w-6 h-6 text-primary-foreground" />
