@@ -6,7 +6,7 @@ import logo from "@/assets/logo.png";
 
 const services = [
   { label: "Accounting Services", path: "/services/accounting" },
-  { label: "IRS Services", path: "/services/irs" },
+  { label: "IFRS Services", path: "/services/ifrs" },
   { label: "Taxation & Tax Services", path: "/services/taxation" },
   { label: "Management Consultancy", path: "/services/consultancy" },
   { label: "Financial Advisory", path: "/services/advisory" },
