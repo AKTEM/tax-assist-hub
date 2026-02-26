@@ -57,15 +57,6 @@ const CTASection = () => {
                 Send a DM
               </a>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <a
-                href="tel:+2348169005556"
-                className="bg-secondary px-8 py-4 rounded-lg font-semibold text-secondary-foreground flex items-center gap-2 hover:opacity-90 transition-opacity shadow-lg shadow-secondary/30"
-              >
-                <Phone className="w-5 h-5" />
-                Call Us Now
-              </a>
-            </motion.div>
           </div>
         </motion.div>
       </div>
