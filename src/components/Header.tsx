@@ -109,7 +109,7 @@ const Header = () => {
             to="/contact"
             className="bg-secondary px-5 py-2 rounded-md text-sm font-semibold text-secondary-foreground hover:opacity-90 transition-opacity"
           >
-            Get Started
+            Schedule Appointment
           </Link>
         </nav>
 
@@ -176,7 +176,7 @@ const Header = () => {
                 to="/contact"
                 className="bg-secondary px-6 py-2 rounded-md text-sm font-semibold text-secondary-foreground"
               >
-                Get Started
+                Schedule Appointment
               </Link>
             </div>
           </motion.nav>
