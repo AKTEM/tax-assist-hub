@@ -24,7 +24,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-10">
           <div className="md:col-span-2">
-            <img src={logo} alt="Tax Assist Solutions" className="h-12 mb-4 bg-header rounded-md px-3 py-1" />
+            <img src={logo} alt="Tax Assist Solutions" className="h-12 mb-4" />
             <p className="text-muted-foreground leading-relaxed max-w-md">
               Tax Assist Solutions is a firm of young and dynamic Chartered Accountants focused on providing Accounting, Financial and advisory services to companies in various sectors of the economy.
             </p>
