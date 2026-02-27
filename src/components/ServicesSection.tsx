@@ -3,9 +3,9 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import servicesBg from "@/assets/services-bg.jpg";
 import serviceAccounting from "@/assets/service-accounting.jpg";
-import serviceIrs from "@/assets/service-irs.jpg";
+import serviceIrs from "@/assets/IFRS.jpg";
 import serviceTaxation from "@/assets/service-taxation.jpg";
-import serviceConsultancy from "@/assets/service-consultancy.jpg";
+import serviceConsultancy from "@/assets/CONSULTING.jpg";
 import serviceAdvisory from "@/assets/service-advisory.jpg";
 import serviceTraining from "@/assets/service-training.jpg";
 import {
